@@ -258,8 +258,8 @@ extension PhotoPickerViewController {
     }
     
     func initNavItems(_ addFilter: Bool = true) {
-		if self.listView  == nil{
-			self.initListView()
+		guard didInitViews else {
+			return
 		}
         let items = config.leftNavigationItems + config.rightNavigationItems
         var leftItems: [UIBarButtonItem] = []
